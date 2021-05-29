@@ -1,6 +1,7 @@
 # plant2
+A Flutter template. <a target="_blank" href="https://dribbble.com/shots/14167159-Plants-App-UX-UI-Design">Inspiration</a>
 
-A new Flutter project.
+## Application UI (Not Finished)
 
 ## Getting Started
 
