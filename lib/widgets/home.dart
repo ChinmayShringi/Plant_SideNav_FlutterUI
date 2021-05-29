@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant2/widgets/tab.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,8 +8,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Widget> widgets = [
-    Container(color: Colors.blue),
-    Container(color: Colors.orange),
+    GreenPlant(),
+    GreenPlant(),
+    GreenPlant(),
   ];
   int currentIndex = 0;
   @override
@@ -36,13 +38,13 @@ class _HomePageState extends State<HomePage> {
                   Spacer(),
                   buildMenuItem("Green Plant", 0),
                   buildMenuItem("Indoor Plant", 1),
-                  buildMenuItem("Shape Plant", 2),
+                  buildMenuItem("Shape Close", 2),
                   Spacer(),
                   RotatedBox(
                     quarterTurns: -1,
                     child: IconButton(
                       icon: Icon(
-                        Icons.home,
+                        Icons.home_outlined,
                         color: Colors.white,
                         size: 30,
                       ),
