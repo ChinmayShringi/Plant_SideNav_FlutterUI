@@ -25,23 +25,11 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(vertical: 35),
             color: Theme.of(context).primaryColor,
             child: RotatedBox(
-              quarterTurns: 1,
+              quarterTurns: 3,
               child: Row(
                 children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.more_horiz,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {},
-                  ),
-                  Spacer(),
-                  buildMenuItem("Green Plant", 0),
-                  buildMenuItem("Indoor Plant", 1),
-                  buildMenuItem("Shape Close", 2),
-                  Spacer(),
                   RotatedBox(
-                    quarterTurns: -1,
+                    quarterTurns: 1,
                     child: IconButton(
                       icon: Icon(
                         Icons.home_outlined,
@@ -50,6 +38,18 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {},
                     ),
+                  ),
+                  Spacer(),
+                  _buildNavItem("Shape Close", 2),
+                  _buildNavItem("Indoor Plant", 1),
+                  _buildNavItem("Green Plant", 0),
+                  Spacer(),
+                  IconButton(
+                    icon: Icon(
+                      Icons.more_horiz,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -68,33 +68,34 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  // CircularNotchedRectangle(),
 
-  TextButton buildMenuItem(String title, int index) {
+  TextButton _buildNavItem(String title, int index) {
     bool isSelected = currentIndex == index;
     return TextButton(
       onPressed: () => setState(() => currentIndex = index),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          isSelected
-              ? Container(
-                  height: 10,
-                  width: 10,
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    shape: BoxShape.circle,
-                  ),
-                )
-              : Container(height: 10),
-          SizedBox(height: 10),
           Text(
             title,
             style: TextStyle(
-              color: isSelected ? Colors.white : Colors.white60,
-              fontSize: isSelected ? 20 : 18,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+              color: Colors.white.withOpacity(0.8),
+              fontSize: 17,
+              fontWeight: FontWeight.normal,
             ),
           ),
+          SizedBox(height: 10),
+          isSelected
+              ? Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                )
+              : Container(height: 30),
         ],
       ),
     );

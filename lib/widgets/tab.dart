@@ -9,7 +9,7 @@ class GreenPlant extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 35),
+          SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -19,13 +19,12 @@ class GreenPlant extends StatelessWidget {
               )
             ],
           ),
-          Text('Green', style: TextStyle(color: Colors.grey, fontSize: 17)),
+          Text('Green', style: TextStyle(color: Colors.grey, fontSize: 15)),
           SizedBox(height: 7),
           Text(
             'Plants',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
           ),
-          SizedBox(height: 10),
           Expanded(
             child: Container(
               child: ListView.builder(
@@ -39,13 +38,16 @@ class GreenPlant extends StatelessWidget {
                         children: [
                           Hero(
                             tag: plants[index].title,
-                            child: Image.network(plants[index].image),
+                            child: Image.network(
+                              plants[index].image,
+                              height: 210,
+                            ),
                           ),
                           SizedBox(height: 10),
                           Text(
                             plants[index].title,
                             style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -53,28 +55,40 @@ class GreenPlant extends StatelessWidget {
                           Text(
                             plants[index].discription,
                             style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
+                              color: Colors.black54,
+                              fontSize: 12,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 5),
                           Row(
                             children: [
                               Text(
                                 "\$${plants[index].price}",
                                 style: TextStyle(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
                                 ),
                               ),
-                              ElevatedButton.icon(
+                              // IconButton(
+                              //   icon: Icon(Icons.menu),
+                              //   color: Colors.transparent,
+                              //   onPressed: () {},
+                              // ),
+                              MaterialButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.add),
-                                label: Text(''),
-                              ),
+                                color: Colors.white,
+                                textColor: Colors.black,
+                                child: Text(
+                                  "+",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                                shape: CircleBorder(),
+                              )
                             ],
                           ),
-                          SizedBox(height: 30),
                           Divider(),
                         ],
                       ),

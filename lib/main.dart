@@ -45,8 +45,7 @@ class Plant {
 List<Plant> plants = [
   Plant(
       title: "Turf Pot Plant",
-      discription: "Small leaf plant for your home and office decoration",
-      height: "40.0 cm to 50cm",
+      discription: "Big leaf plant for your home and office decoration",
       temprature: "18c to 25c",
       image: "https://img.pngio.com/download-artificial"
           "-potted-plant-oregano-png-image-for-free-potted-plants-png-2000_2000.png",
@@ -54,7 +53,7 @@ List<Plant> plants = [
       price: "59.00"),
   Plant(
       title: "Scandinavian Plant",
-      discription: "Small leaf plant for your home and office decoration",
+      discription: "Thin leaf plant for your home and office decoration",
       height: "40.0 cm to 50cm",
       temprature: "18c to 25c",
       image:
