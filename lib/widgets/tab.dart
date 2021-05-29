@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant2/main.dart';
+import 'package:plant2/widgets/details.dart';
 
 class GreenPlant extends StatelessWidget {
   @override
@@ -31,7 +32,16 @@ class GreenPlant extends StatelessWidget {
                 itemCount: plants.length,
                 itemBuilder: (_, index) {
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => DetailPage(
+                            plant: plants[index],
+                          ),
+                        ),
+                      );
+                    },
                     child: Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
